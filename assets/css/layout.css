@@ -1,0 +1,189 @@
+@import '../css/reset.css';
+@import '../css/common.css';
+
+body{
+  background: #fff;
+  transition: background-color .5s;
+  overflow-x: hidden;
+}
+body.dark{
+  background: #000;
+}
+
+.wrapper{
+  position: relative;
+  min-width: 1403px;
+}
+
+.inner{
+  padding: 0 100px;
+}
+
+/* header */
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  z-index: 100;
+  transform: translateY(-100%);
+  transition: all .5s;
+}
+.header.on{
+  transform: translateY(0);
+}
+.header.dark{
+  color: #000;
+}
+.header.dark .logo a img{
+  filter: invert(0);
+}
+.header.dark .lang-title svg{
+  filter: invert(1);
+}
+.header.dark .lang-list{
+  color: #fff;
+}
+body.dark .header{
+  color: #fff;
+}
+body.dark .header.dark .logo a img{
+  filter: invert(1);
+}
+body.dark .header.dark .lang-title svg{
+  filter: invert(0);
+}
+body.dark .header.dark .lang-list{
+  color: #fff;
+}
+
+
+.header .inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+.header .logo a{
+  display: block;
+  width: 100px;
+}
+.header .logo a img{
+  filter: invert(1);
+  transition: all .5s;
+}
+.header .gnb-list{
+  display: flex;
+  align-items: center;
+}
+.header .gnb-item{
+  position: relative;
+}
+.header .gnb-item a{
+  display: block;
+  padding: 23px 25px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.header .gnb-item .lang-title{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 20px 0 18px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.header .gnb-item .lang-img svg{
+  transition: all 0.5s;
+}
+.header .gnb-item .lang-list{
+  position: absolute;
+  right: 0;
+  top: 50px;
+  padding: 3px 0;
+  text-align: center;
+  background-color: #000;
+  border: 1px solid #5a5a5a;
+  border-radius: 6px;
+  transition: all .3s;
+  opacity: 0;
+  visibility: hidden;
+}
+.header .gnb-item .lang-list.on{
+  opacity: 1;
+  visibility: visible;
+}
+.header .gnb-item .lang-item a{
+  display: block;
+  padding: 2px 14px 4px 13px;
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: bold;
+  opacity: .3;
+}
+.header .gnb-item .lang-item a.on{
+  opacity: 1;
+}
+
+/* .btn-scroll-top */
+.btn-scroll-top{
+  position: fixed;
+  right: 100px;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s,visibility 0.5s;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.btn-scroll-top.on{
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-scroll-top.hide{
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.btn-scroll-top.fixed{
+  position: absolute;
+  bottom: 300px;
+}
+
+/* footer */
+.footer{
+  position: relative;
+  background: #000;
+  color: #fff;
+}
+.footer .inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+.footer .text-area{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+.footer .footer-logo{
+  display: block;
+  width: 193px;
+  height: 42px;
+}
